@@ -1,10 +1,34 @@
 ﻿@page
+@using System.Globalization;
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
 
 <div class="text-center">
+
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <div class="d-flex justify-content-center">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var cateogry in Model.Categories)
+                {
+                    <tr>
+                        <td>@cateogry.Id</td>
+                        <td>@cateogry.Title</td>
+                        <td>@cateogry.Price.ToString("C", new CultureInfo("pt-BR"))</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </div>
