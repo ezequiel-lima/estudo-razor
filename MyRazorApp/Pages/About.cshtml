@@ -1,0 +1,39 @@
+﻿@page "~/Sobre"
+@model MyRazorApp.Pages.AboutModel
+@{
+    
+}
+
+<div class="text-center">
+    <h1 class="display-4">About</h1>
+    <p>Nós somos uma empresa à sua disposição</p>
+</div>
+
+<button class="btn btn-primary" data-toggle="modal" data-target="#meuModal">Abrir Modal</button>
+
+<div id="meuModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Título do Modal</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Conteúdo do modal...</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $('#meuModal').on('shown.bs.modal', function () {
+            // Código a ser executado quando o modal for mostrado
+        });
+    </script>
+}
